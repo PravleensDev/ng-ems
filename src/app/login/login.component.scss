@@ -1,0 +1,13 @@
+.login-image{
+    background-image: url("../../assets/login_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.login-image::before{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    content: "d";
+    color: transparent;
+    background-color: rgba(0,0,0,0.3);
+}
