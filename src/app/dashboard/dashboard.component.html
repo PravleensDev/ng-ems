@@ -4,9 +4,9 @@
   </div>
 </mat-toolbar>
 
-<div class="container mt-4 h-auto h-75">
-  <div class="row h-auto h-100 ">
-    <div class="col-5 mx-auto">
+<div class="container text-center mt-5 h-auto h-75">
+  <div class="row h-auto h-100 mt-5">
+    <div class="col-12 col-md-7 text-center px-4">
       <div class="input-group">
         <div class="input-group-prepend mr-2">
           <button mat-flat-button color="primary">
@@ -19,22 +19,12 @@
           placeholder="Search employee ..."
         />&nbsp;&nbsp;
       </div>
+      <hr />
+      <!--Employee detials card-->
+      <app-employee-card [data]="employeeArray"></app-employee-card>
     </div>
-    <div class="col-6 h-100 h-auto mx-auto">
-      <div class="d-flex h-100 w-100 align-items-center">
-        <div class="row w-100 px-0">
-          <div class="col-6 mx-auto text-center">
-            <div class="jumbotron"></div>
-          </div>
-          <div class="col-6 mx-auto text-center">
-            <div class="jumbotron"></div>
-          </div>
-
-          <div class="col-12 mx-auto text-center">
-            <div class="jumbotron"></div>
-          </div>
-        </div>
-      </div>
+    <div class="col-md-5 col-12 h-100 h-auto mx-auto">
+      <app-search-filter></app-search-filter>
     </div>
   </div>
 </div>
