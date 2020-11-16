@@ -7,27 +7,48 @@
 <div class="container text-center h-auto h-75">
   <div class="row h-auto h-100 mt-5">
     <div class="col-12 col-md-7 text-center px-4">
-      <div class="row pb-0 mb-0 no-gutters">
-        <div class="col-8 text-left mx-auto">
-          <mat-form-field class="w-100" color="accent" appearance="fill">
-            <mat-label>Employee name</mat-label>
-            <input matInput placeholder="Enter employee name ..." type="text"  />
-          </mat-form-field>
+      <form (submit)="searchByEmployeeName()" [formGroup]="nameSearchForm">
+        <div class="row pb-0 mb-0 no-gutters">
+          <div class="col-8 text-left mx-auto">
+            <mat-form-field class="w-100" color="accent" appearance="fill">
+              <mat-label>Employee name</mat-label>
+              <input
+                matInput
+                placeholder="Enter employee name ..."
+                type="text"
+                formControlName="searchedEmployeeName"
+              />
+              <mat-error *ngIf ="nameSearchForm.controls.searchedEmployeeName.pristine && nameSearchForm.controls.searchedEmployeeName.hasError">Must Contain Valid Employee Name</mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-3 text-left mx-auto">
+            <button
+              mat-raised-button
+              color="primary"
+              class="w-75 h-75"
+              type="submit"
+            >
+              <i class="fas fa-search"></i> Search
+            </button>
+          </div>
         </div>
-        <div class="col-3 text-left mx-auto">
-          <button mat-raised-button color="primary" class="w-75">
-            <i class="fas fa-search"></i> Search
-          </button>
-        </div>
-      </div>
+      </form>
 
       <hr />
       <!--Employee detials card-->
-      <app-employee-card [data]="employeeArray"></app-employee-card>
+
+      <app-employee-card
+        [data]="employeeArray"
+        *ngIf="!dataLoading"
+      ></app-employee-card>
     </div>
+
     <div class="col-md-5 col-12 h-100 h-auto mx-auto">
       <!--Employee filter card-->
-      <app-search-filter></app-search-filter>
+      <app-search-filter
+        *ngIf="!dataLoading"
+        (appliedFilterData)="getSelectedFilters($event)"
+      ></app-search-filter>
     </div>
   </div>
 </div>

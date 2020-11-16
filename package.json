@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ngcc"
+    "postinstall": "ngcc",
+    "json":"json-server --watch employee_data/db.json"
   },
   "private": true,
   "dependencies": {

@@ -1,314 +1,282 @@
 {
-    "data": [
-      {
-        "id": "1",
-        "employee_name": "Tiger Nixon",
-        "employee_salary": "320800",
-        "employee_age": "61",
-        "profile_image": "",
-        "skills": [
-          "docker",
-          "texting",
-          "docker",
-          "mongodb",
-          "mongodb",
-          "full stack",
-          "devops",
-          "react"
-        ],
-        "designation": "admin",
-        "DOJ": "6-10-2011"
-      },
-      {
-        "id": "2",
-        "employee_name": "Garrett Winters",
-        "employee_salary": "170750",
-        "employee_age": "63",
-        "profile_image": "",
-        "skills": ["fultter", "full stack", "devops"],
-        "designation": "developer",
-        "DOJ": "13-5-2015"
-      },
-      {
-        "id": "3",
-        "employee_name": "Ashton Cox",
-        "employee_salary": "86000",
-        "employee_age": "66",
-        "profile_image": "",
-        "skills": [
-          "python",
-          "devops",
-          "docker",
-          "react",
-          "sql",
-          "fultter",
-          "sql",
-          "docker"
-        ],
-        "designation": "admin",
-        "DOJ": "19-1-2014"
-      },
-      {
-        "id": "4",
-        "employee_name": "Cedric Kelly",
-        "employee_salary": "433060",
-        "employee_age": "22",
-        "profile_image": "",
-        "skills": [
-          "angular",
-          "fultter",
-          "angular",
-          "angular",
-          "react",
-          "mongodb",
-          "fultter",
-          "devops"
-        ],
-        "designation": "hr",
-        "DOJ": "15-8-2017"
-      },
-      {
-        "id": "5",
-        "employee_name": "Airi Satou",
-        "employee_salary": "162700",
-        "employee_age": "33",
-        "profile_image": "",
-        "skills": [
-          "python",
-          "react",
-          "mongodb",
-          "full stack",
-          "mongodb",
-          "python",
-          "full stack"
-        ],
-        "designation": "developer",
-        "DOJ": "6-10-2012"
-      },
-      {
-        "id": "6",
-        "employee_name": "Brielle Williamson",
-        "employee_salary": "372000",
-        "employee_age": "61",
-        "profile_image": "",
-        "skills": [
-          "python",
-          "angular",
-          "python",
-          "python",
-          "texting",
-          "python",
-          "mongodb",
-          "devops"
-        ],
-        "designation": "hr",
-        "DOJ": "13-6-2011"
-      },
-      {
-        "id": "7",
-        "employee_name": "Herrod Chandler",
-        "employee_salary": "137500",
-        "employee_age": "59",
-        "profile_image": "",
-        "skills": ["docker", "react", "docker", "mongodb", "sql", "devops"],
-        "designation": "engineer",
-        "DOJ": "15-4-2016"
-      },
-      {
-        "id": "8",
-        "employee_name": "Rhona Davidson",
-        "employee_salary": "327900",
-        "employee_age": "55",
-        "profile_image": "",
-        "skills": ["angular", "mongodb"],
-        "designation": "tester",
-        "DOJ": "1-3-2011"
-      },
-      {
-        "id": "9",
-        "employee_name": "Colleen Hurst",
-        "employee_salary": "205500",
-        "employee_age": "39",
-        "profile_image": "",
-        "skills": ["react", "fultter", "mongodb", "devops", "devops"],
-        "designation": "admin",
-        "DOJ": "15-4-2016"
-      },
-      {
-        "id": "10",
-        "employee_name": "Sonya Frost",
-        "employee_salary": "103600",
-        "employee_age": "23",
-        "profile_image": "",
-        "skills": ["texting", "sql", "angular", "full stack"],
-        "designation": "hr",
-        "DOJ": "2-6-2015"
-      },
-      {
-        "id": "11",
-        "employee_name": "Jena Gaines",
-        "employee_salary": "90560",
-        "employee_age": "30",
-        "profile_image": "",
-        "skills": ["angular", "react", "mongodb"],
-        "designation": "developer",
-        "DOJ": "11-1-2012"
-      },
-      {
-        "id": "12",
-        "employee_name": "Quinn Flynn",
-        "employee_salary": "342000",
-        "employee_age": "22",
-        "profile_image": "",
-        "skills": ["docker"],
-        "designation": "developer",
-        "DOJ": "23-1-2016"
-      },
-      {
-        "id": "13",
-        "employee_name": "Charde Marshall",
-        "employee_salary": "470600",
-        "employee_age": "36",
-        "profile_image": "",
-        "skills": [
-          "devops",
-          "python",
-          "mongodb",
-          "mongodb",
-          "devops",
-          "texting",
-          "react",
-          "fultter"
-        ],
-        "designation": "developer",
-        "DOJ": "23-8-2018"
-      },
-      {
-        "id": "14",
-        "employee_name": "Haley Kennedy",
-        "employee_salary": "313500",
-        "employee_age": "43",
-        "profile_image": "",
-        "skills": ["angular", "react"],
-        "designation": "tester",
-        "DOJ": "6-4-2015"
-      },
-      {
-        "id": "15",
-        "employee_name": "Tatyana Fitzpatrick",
-        "employee_salary": "385750",
-        "employee_age": "19",
-        "profile_image": "",
-        "skills": ["angular", "docker", "python"],
-        "designation": "hr",
-        "DOJ": "13-6-2011"
-      },
-      {
-        "id": "16",
-        "employee_name": "Michael Silva",
-        "employee_salary": "198500",
-        "employee_age": "66",
-        "profile_image": "",
-        "skills": ["texting"],
-        "designation": "admin",
-        "DOJ": "14-9-2013"
-      },
-      {
-        "id": "17",
-        "employee_name": "Paul Byrd",
-        "employee_salary": "725000",
-        "employee_age": "64",
-        "profile_image": "",
-        "skills": ["docker", "full stack", "devops"],
-        "designation": "tester",
-        "DOJ": "19-4-2012"
-      },
-      {
-        "id": "18",
-        "employee_name": "Gloria Little",
-        "employee_salary": "237500",
-        "employee_age": "59",
-        "profile_image": "",
-        "skills": ["texting", "texting", "angular"],
-        "designation": "tester",
-        "DOJ": "20-10-2013"
-      },
-      {
-        "id": "19",
-        "employee_name": "Bradley Greer",
-        "employee_salary": "132000",
-        "employee_age": "41",
-        "profile_image": "",
-        "skills": ["sql", "texting", "texting", "full stack", "devops"],
-        "designation": "tester",
-        "DOJ": "18-8-2012"
-      },
-      {
-        "id": "20",
-        "employee_name": "Dai Rios",
-        "employee_salary": "217500",
-        "employee_age": "35",
-        "profile_image": "",
-        "skills": [
-          "fultter",
-          "docker",
-          "mongodb",
-          "angular",
-          "devops",
-          "full stack"
-        ],
-        "designation": "hr",
-        "DOJ": "22-8-2012"
-      },
-      {
-        "id": "21",
-        "employee_name": "Jenette Caldwell",
-        "employee_salary": "345000",
-        "employee_age": "30",
-        "profile_image": "",
-        "skills": ["python", "mongodb", "angular", "python", "sql"],
-        "designation": "hr",
-        "DOJ": "22-3-2017"
-      },
-      {
-        "id": "22",
-        "employee_name": "Yuri Berry",
-        "employee_salary": "675000",
-        "employee_age": "40",
-        "profile_image": "",
-        "skills": [
-          "react",
-          "mongodb",
-          "sql",
-          "react",
-          "devops",
-          "mongodb",
-          "sql",
-          "devops"
-        ],
-        "designation": "hr",
-        "DOJ": "8-7-2012"
-      },
-      {
-        "id": "23",
-        "employee_name": "Caesar Vance",
-        "employee_salary": "106450",
-        "employee_age": "21",
-        "profile_image": "",
-        "skills": ["fultter", "docker"],
-        "designation": "developer",
-        "DOJ": "8-4-2015"
-      },
-      {
-        "id": "24",
-        "employee_name": "Doris Wilder",
-        "employee_salary": "85600",
-        "employee_age": "23",
-        "profile_image": "",
-        "skills": ["angular", "full stack", "mongodb"],
-        "designation": "admin",
-        "DOJ": "8-3-2014"
-      }
-    ]
-  }
-  
+  "data": [
+    {
+      "id": "1",
+      "employee_name": "Tiger Nixon",
+      "employee_salary": "320800",
+      "employee_age": "61",
+      "profile_image": "",
+      "skills": [" devops"],
+      "designation": " hr",
+      "DOJ": "12-March-2010"
+    },
+    {
+      "id": "2",
+      "employee_name": "Garrett Winters",
+      "employee_salary": "170750",
+      "employee_age": "63",
+      "profile_image": "",
+      "skills": [
+        " sql",
+        " react",
+        " fultter",
+        " docker",
+        " full stack",
+        " mongodb"
+      ],
+      "designation": " engineer",
+      "DOJ": "1-September-2010"
+    },
+    {
+      "id": "3",
+      "employee_name": "Ashton Cox",
+      "employee_salary": "86000",
+      "employee_age": "66",
+      "profile_image": "",
+      "skills": [" angular", " sql", " testing", "java"],
+      "designation": " developer",
+      "DOJ": "9-July-2018"
+    },
+    {
+      "id": "4",
+      "employee_name": "Cedric Kelly",
+      "employee_salary": "433060",
+      "employee_age": "22",
+      "profile_image": "",
+      "skills": ["java", " docker"],
+      "designation": " hr",
+      "DOJ": "7-October-2010"
+    },
+    {
+      "id": "5",
+      "employee_name": "Airi Satou",
+      "employee_salary": "162700",
+      "employee_age": "33",
+      "profile_image": "",
+      "skills": [" sql", " react", " full stack", " devops", " mongodb"],
+      "designation": " engineer",
+      "DOJ": "19-June-2011"
+    },
+    {
+      "id": "6",
+      "employee_name": "Brielle Williamson",
+      "employee_salary": "372000",
+      "employee_age": "61",
+      "profile_image": "",
+      "skills": [" angular", "java", " devops", " python"],
+      "designation": " engineer",
+      "DOJ": "18-May-2014"
+    },
+    {
+      "id": "7",
+      "employee_name": "Herrod Chandler",
+      "employee_salary": "137500",
+      "employee_age": "59",
+      "profile_image": "",
+      "skills": [
+        " react",
+        " full stack",
+        " sql",
+        " devops",
+        " python",
+        " testing",
+        " angular"
+      ],
+      "designation": " admin",
+      "DOJ": "24-February-2012"
+    },
+    {
+      "id": "8",
+      "employee_name": "Rhona Davidson",
+      "employee_salary": "327900",
+      "employee_age": "55",
+      "profile_image": "",
+      "skills": [
+        " testing",
+        " fultter",
+        " docker",
+        " angular",
+        " react",
+        " sql"
+      ],
+      "designation": " engineer",
+      "DOJ": "3-April-2017"
+    },
+    {
+      "id": "9",
+      "employee_name": "Colleen Hurst",
+      "employee_salary": "205500",
+      "employee_age": "39",
+      "profile_image": "",
+      "skills": [" devops", " react"],
+      "designation": " developer",
+      "DOJ": "22-February-2012"
+    },
+    {
+      "id": "10",
+      "employee_name": "Sonya Frost",
+      "employee_salary": "103600",
+      "employee_age": "23",
+      "profile_image": "",
+      "skills": [
+        " sql",
+        " react",
+        " fultter",
+        " python",
+        " angular",
+        " full stack"
+      ],
+      "designation": " developer",
+      "DOJ": "17-November-2013"
+    },
+    {
+      "id": "11",
+      "employee_name": "Jena Gaines",
+      "employee_salary": "90560",
+      "employee_age": "30",
+      "profile_image": "",
+      "skills": [" python"],
+      "designation": " developer",
+      "DOJ": "20-April-2015"
+    },
+    {
+      "id": "12",
+      "employee_name": "Quinn Flynn",
+      "employee_salary": "342000",
+      "employee_age": "22",
+      "profile_image": "",
+      "skills": [" angular", " react", " devops", "java", " testing"],
+      "designation": " admin",
+      "DOJ": "11-August-2015"
+    },
+    {
+      "id": "13",
+      "employee_name": "Charde Marshall",
+      "employee_salary": "470600",
+      "employee_age": "36",
+      "profile_image": "",
+      "skills": [" docker"],
+      "designation": " admin",
+      "DOJ": "24-September-2019"
+    },
+    {
+      "id": "14",
+      "employee_name": "Haley Kennedy",
+      "employee_salary": "313500",
+      "employee_age": "43",
+      "profile_image": "",
+      "skills": [" react", " sql", "java", " fultter"],
+      "designation": " hr",
+      "DOJ": "20-May-2019"
+    },
+    {
+      "id": "15",
+      "employee_name": "Tatyana Fitzpatrick",
+      "employee_salary": "385750",
+      "employee_age": "19",
+      "profile_image": "",
+      "skills": [" full stack", " docker"],
+      "designation": " engineer",
+      "DOJ": "24-April-2011"
+    },
+    {
+      "id": "16",
+      "employee_name": "Michael Silva",
+      "employee_salary": "198500",
+      "employee_age": "66",
+      "profile_image": "",
+      "skills": [" testing", "java", " devops"],
+      "designation": " developer",
+      "DOJ": "17-March-2015"
+    },
+    {
+      "id": "17",
+      "employee_name": "Paul Byrd",
+      "employee_salary": "725000",
+      "employee_age": "64",
+      "profile_image": "",
+      "skills": [" docker", " testing"],
+      "designation": " engineer",
+      "DOJ": "18-May-2018"
+    },
+    {
+      "id": "18",
+      "employee_name": "Gloria Little",
+      "employee_salary": "237500",
+      "employee_age": "59",
+      "profile_image": "",
+      "skills": [" python", " angular", " devops", " sql"],
+      "designation": " tester",
+      "DOJ": "23-March-2015"
+    },
+    {
+      "id": "19",
+      "employee_name": "Bradley Greer",
+      "employee_salary": "132000",
+      "employee_age": "41",
+      "profile_image": "",
+      "skills": [
+        " docker",
+        " sql",
+        " react",
+        " devops",
+        " testing",
+        " python",
+        " fultter",
+        "java"
+      ],
+      "designation": " hr",
+      "DOJ": "24-May-2014"
+    },
+    {
+      "id": "20",
+      "employee_name": "Dai Rios",
+      "employee_salary": "217500",
+      "employee_age": "35",
+      "profile_image": "",
+      "skills": [" full stack"],
+      "designation": " hr",
+      "DOJ": "18-August-2013"
+    },
+    {
+      "id": "21",
+      "employee_name": "Jenette Caldwell",
+      "employee_salary": "345000",
+      "employee_age": "30",
+      "profile_image": "",
+      "skills": [" full stack", "java", " react", " mongodb", " sql"],
+      "designation": " admin",
+      "DOJ": "3-July-2014"
+    },
+    {
+      "id": "22",
+      "employee_name": "Yuri Berry",
+      "employee_salary": "675000",
+      "employee_age": "40",
+      "profile_image": "",
+      "skills": [" mongodb", " python", "java", " devops", " full stack"],
+      "designation": " engineer",
+      "DOJ": "2-September-2012"
+    },
+    {
+      "id": "23",
+      "employee_name": "Caesar Vance",
+      "employee_salary": "106450",
+      "employee_age": "21",
+      "profile_image": "",
+      "skills": [" devops"],
+      "designation": " admin",
+      "DOJ": "20-February-2019"
+    },
+    {
+      "id": "24",
+      "employee_name": "Doris Wilder",
+      "employee_salary": "85600",
+      "employee_age": "23",
+      "profile_image": "",
+      "skills": [" python"],
+      "designation": " tester",
+      "DOJ": "3-August-2010"
+    }
+  ]
+}

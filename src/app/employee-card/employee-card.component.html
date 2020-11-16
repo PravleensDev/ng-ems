@@ -1,5 +1,8 @@
 <ul class="list-group text-center w-100">
-  <li class="list-group-item text-center w-100" *ngFor="let item of data">
+  <li
+    class="list-group-item text-center w-100"
+    *ngFor="let employeeDetail of data"
+  >
     <div class="conatiner-fluid w-100">
       <mat-card class="card-hover w-100">
         <mat-card-content>
@@ -11,13 +14,55 @@
                 <div mat-card-avatar class="avatar-image"></div>
               </div>
             </div>
-            <div class="col text-center">
-              <p>
-                The Shiba Inu is the smallest of the six original and distinct
-                spitz breeds of dog from Japan. A small, agile dog that copes
-                very well with mountainous terrain, the Shiba Inu was originally
-                bred for hunting.
-              </p>
+            <div class="col-10 text-center">
+              <div class="card-text text-left">
+                <h1 class="h2 font-weight-normal text-muted">
+                  {{ employeeDetail.employee_name
+                  }}<span class="text-muted" style="font-size: 15px">
+                    (Id: {{ employeeDetail.id }})</span
+                  >
+                </h1>
+              </div>
+              <div class="card-text px-0">
+                <div class="row no-gutters w-100">
+                  <div class="col-12 text-left">
+                    <label class="h6 text-muted"
+                      >Age: {{ employeeDetail.employee_age }}</label
+                    >
+                  </div>
+                  <div class="col-12 text-left">
+                    <span class="h6 text-muted text-truncate text-capitalize"
+                      >Skills:
+                      {{
+                        employeeDetail.skills.length > 4
+                          ? employeeDetail.skills.slice(0, 4)
+                          : employeeDetail.skills
+                      }}</span
+                    >
+                  </div>
+                </div>
+                <div class="row no-gutters w-100 pt-2">
+                  <div class="col-7 text-left">
+                    <label class="h6 text-muted text-capitalize"
+                      >Designation: {{ employeeDetail.designation }}</label
+                    >
+                  </div>
+                  <div class="col text-left">
+                    <label class="h6 text-muted"
+                      >Salary:
+                      {{
+                        getFormattedSalary(employeeDetail.employee_salary)
+                      }}</label
+                    >
+                  </div>
+                  <div class="col-12 text-left">
+                    <label class="h6 text-muted"
+                      >Joined on:
+                      {{ getFormattedDoj(employeeDetail.DOJ) }}</label
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </mat-card-content>
@@ -25,7 +70,3 @@
     </div>
   </li>
 </ul>
-
-
-
-

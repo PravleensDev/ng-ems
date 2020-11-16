@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { FormControl } from '@angular/forms';
+import { FormBuilder,  Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-search-filter',
@@ -8,10 +8,9 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./search-filter.component.scss'],
 })
 export class SearchFilterComponent implements OnInit {
-  designationSelected = new FormControl();
-  skillsSelected = new FormControl();
+  @Output() appliedFilterData: EventEmitter<string> = new EventEmitter();
 
-  designationList = [
+  designationList: string[] = [
     'manager',
     'developer',
     'tester',
@@ -19,7 +18,8 @@ export class SearchFilterComponent implements OnInit {
     'engineer',
     'admin',
   ];
-  skillsList = [
+
+  skillsList: string[] = [
     'java',
     'python',
     'full stack',
@@ -34,28 +34,35 @@ export class SearchFilterComponent implements OnInit {
   ];
 
   minSalary: number = 10_000;
+
   maxSalary: number = 100_0000;
-  salaryInterval: number = 100000;
+
+  salaryInterval: number = 100_000;
+
   salaryLabelDisplay: any = 'Salary';
 
-  /**
-   * [min] = "minSalary" [max] ="maxSalary" [tickInterval] = "salaryInterval" [displayWith] = "salaryLabel"
-   */
-  constructor() {}
+  filterFormData = this._filterFormBuilder.group({
+    emp_id: ['', [Validators.min(0)]],
+    doj: ['', null],
+    designationSelected: ['', null],
+    skillsSelected: ['', null],
+    salary: [10_000, null],
+  });
+
+  constructor(private _filterFormBuilder: FormBuilder) {}
 
   salaryLabel = (value: number) => {
     if (value >= 1000) {
       const val = Math.round(value / 1000) + 'k';
-      value === this.minSalary
-      ? (this.salaryLabelDisplay = 'Salary')
-      : (this.salaryLabelDisplay = val);
       return val;
     }
-    value === this.minSalary
-      ? (this.salaryLabelDisplay = 'Salary')
-      : (this.salaryLabelDisplay = value);
-
     return value;
   };
+
   ngOnInit(): void {}
+
+  pushSelectedFiltersToDashboard = () => {
+    console.log(this.filterFormData)
+    this.appliedFilterData.emit(this.filterFormData.value);
+  };
 }
