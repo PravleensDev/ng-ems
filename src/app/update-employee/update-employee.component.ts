@@ -94,7 +94,7 @@ export class UpdateEmployeeComponent implements OnInit {
               empAge: employee_age,
             });
 
-            this.designationDefault = designation.trim().charAt(0).toUpperCase() + designation.slice(1);
+            this.designationDefault = designation.trim().charAt(0).toUpperCase() + designation.slice(2);
             this.skillsList = skills;
           });
       }
