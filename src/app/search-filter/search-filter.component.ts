@@ -33,7 +33,7 @@ export class SearchFilterComponent implements OnInit {
     'texting',
   ];
 
-  minSalary: number = 10_000;
+  minSalary: number = 0;
 
   maxSalary: number = 100_0000;
 
@@ -58,11 +58,12 @@ export class SearchFilterComponent implements OnInit {
     }
     return value;
   };
-
+  
   ngOnInit(): void {}
-
+  
   pushSelectedFiltersToDashboard = () => {
-    console.log(this.filterFormData)
+    //console.log(this.filterFormData)
     this.appliedFilterData.emit(this.filterFormData.value);
+    
   };
 }
