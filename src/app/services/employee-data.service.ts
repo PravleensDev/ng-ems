@@ -14,6 +14,7 @@ export class EmployeeDataService {
   };
 
   getEmployeeProfile = (employeeId: number) => {
-    return this._http.get(`${this.baseUrl}/${employeeId}`);
+    console.log('Get request for employee profile with id ' + employeeId);
+    return this._http.get(this.baseUrl + '/' + employeeId);
   };
 }

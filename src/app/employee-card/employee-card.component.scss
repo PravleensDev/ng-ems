@@ -1,10 +1,15 @@
-.avatar-image{
-    background-image: url("../../assets/avatar.png");
-    background-size: cover;
-  }
+.avatar-image {
+  background-image: url("../../assets/avatar.png");
+  background-size: cover;
+}
 
-  /*
+/*
 mat-card{
   background-color: #424242;
   color:white;
 }*/
+
+.link-hover,
+.link-hover:hover {
+  text-decoration: none;
+}

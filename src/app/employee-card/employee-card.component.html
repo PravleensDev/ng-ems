@@ -4,6 +4,7 @@
     *ngFor="let employeeDetail of data"
   >
     <div class="conatiner-fluid w-100">
+      <a [routerLink] = "['/update-employee']" [queryParams] = "{id: employeeDetail.id}" class="text-decoration-none link-hover">
       <mat-card class="card-hover w-100">
         <mat-card-content>
           <div class="row w-100 no-gutters">
@@ -67,6 +68,7 @@
           </div>
         </mat-card-content>
       </mat-card>
+    </a>
     </div>
   </li>
 </ul>

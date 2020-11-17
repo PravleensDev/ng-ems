@@ -1,0 +1,212 @@
+<div class="profile-background"></div>
+
+<div class="jumbotron p-4 bg-transparent"></div>
+
+<div class="container text-center w-75">
+  <form [formGroup]="updateForm">
+    <div class="row no-gutters">
+      <div class="col-4">
+        <img src="../../assets/avatar.png" class="avatar-img" />
+      </div>
+      <div
+        class="col d-flex align-items-center justify-content-center text-center"
+      >
+        <header class="display-2 text-white font-weight-bold">
+          {{ employeeNameHeading }}
+        </header>
+      </div>
+    </div>
+    <div class="jumbotron p-2 bg-transparent"></div>
+
+    <div class="row">
+      <div class="col-11 text-center mx-auto">
+        <div class="text-left pb-0">
+          <label class="h3 text-muted pb-0"
+            ><i class="fas fa-user"></i> Personal info</label
+          >
+        </div>
+        <hr />
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-5 text-center mx-auto">
+        <mat-form-field class="w-100" color="accent" appearance="fill">
+          <mat-label>Employee name</mat-label>
+          <input
+            matInput
+            placeholder="Enter employee name ..."
+            type="text"
+            value="tom Wixin"
+            [readonly]="!userIdAdmin"
+            formControlName="empName"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-5 mx-auto">
+        <mat-form-field
+          appearance="fill"
+          class="w-100"
+          color="accent"
+          style="text-transform: capitalize"
+        >
+          <mat-label>Designation</mat-label>
+          <input
+            matInput
+            placeholder="Designation"
+            type="text"
+            [value]="designationDefault"
+            [readonly]="true"
+            *ngIf="!userIdAdmin"
+            formControlName="designationSelected"
+          />
+          <mat-select
+            style="text-transform: capitalize"
+            *ngIf="userIdAdmin"
+            formControlName="designationSelected"
+            [compareWith]="compareDesignation"
+            [(ngModel)]="designationDefault"
+          >
+            <mat-option
+              *ngFor="let item of designationList"
+              [value]="item"
+              style="text-transform: capitalize"
+              >{{ item }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-5 text-center mx-auto pt-3">
+        <mat-form-field color="accent" appearance="fill" class="w-100">
+          <mat-label>Select date of joining</mat-label>
+          <input
+            matInput
+            placeholder="Date of joining"
+            type="text"
+            [readonly]="true"
+            *ngIf="!userIdAdmin"
+            class="w-100"
+            formControlName="doj"
+          />
+          <input
+            matInput
+            [matDatepicker]="dojpicker"
+            *ngIf="userIdAdmin"
+            formControlName="doj"
+          />
+          <mat-datepicker-toggle
+            *ngIf="userIdAdmin"
+            matSuffix
+            [for]="dojpicker"
+            class="w-100"
+          ></mat-datepicker-toggle>
+          <mat-datepicker #dojpicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+
+      <div class="col-5 text-center mx-auto pt-3">
+        <mat-form-field class="w-100" color="accent" appearance="fill">
+          <mat-label>Age</mat-label>
+          <input
+            matInput
+            placeholder="Enter employee age ..."
+            type="number"
+            value="25"
+            [readonly]="!userIdAdmin"
+            formControlName="empAge"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-5 text-center mx-auto pt-3">
+        <mat-form-field class="w-100" color="accent" appearance="fill">
+          <mat-label>Employee id</mat-label>
+          <input
+            matInput
+            placeholder="Enter employee id ..."
+            type="number"
+            value="1"
+            [readonly]="!userIdAdmin"
+            formControlName="empId"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-5 text-center mx-auto pt-3">
+        <mat-form-field class="w-100" color="accent" appearance="fill">
+          <mat-label>Salary</mat-label>
+          <input
+            matInput
+            placeholder="Enter employee salary ..."
+            type="number"
+            value="250000"
+            [readonly]="!userIdAdmin"
+            formControlName="salary"
+          />
+        </mat-form-field>
+      </div>
+      <div class="col-5 text-center mx-auto pt-3">
+        <mat-form-field class="w-100" color="accent" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            placeholder="Enter employee email ..."
+            type="email"
+            value="user@example.com"
+            [readonly]="!userIdAdmin"
+            formControlName="empEmail"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="col-5 text-center mx-auto pt-3">
+        <mat-form-field class="w-100" color="accent" appearance="fill">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            placeholder="Enter employee Password ..."
+            type="password"
+            value="12345678"
+            [readonly]="!userIdAdmin"
+            formControlName="empPassword"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-11 text-center mx-auto">
+        <div class="text-left pb-0">
+          <label class="h3 text-muted pb-0">
+            <i class="fas fa-fire"></i> Skills</label
+          >
+        </div>
+        <hr />
+      </div>
+      <div class="col-11 text-center mx-auto pt-3">
+        <mat-form-field class="w-100">
+          <mat-chip-list #chipList aria-label="Fruit selection">
+            <mat-chip
+              *ngFor="let skill of skillsList; let i = index"
+              [selectable]="selectable"
+              [removable]="removable"
+              (removed)="removeSkill(skill)"
+            >
+              {{ skill }}
+              <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+            </mat-chip>
+
+            <input
+              class="w-100"
+              placeholder="Add Skill"
+              #fruitInput
+              formControlName="skillsSelected"
+              [matChipInputFor]="chipList"
+              [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+              (matChipInputTokenEnd)="addSkill($event)"
+              [readonly]="!userIdAdmin"
+            />
+          </mat-chip-list>
+        </mat-form-field>
+      </div>
+    </div>
+  </form>
+</div>

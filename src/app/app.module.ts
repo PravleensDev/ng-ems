@@ -22,6 +22,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
+import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
     DashboardComponent,
     SearchFilterComponent,
     EmployeeCardComponent,
+    UpdateEmployeeComponent,
   ],
   imports: [
     BrowserModule,
