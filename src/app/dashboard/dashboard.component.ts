@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit {
   }
 
   filterByDoj(startDoj: Date) {
-    console.log(startDoj);
+    //console.log(startDoj);
     const dayDate = startDoj.getDate();
     const monthNumber = startDoj.getMonth();
     const yearNumber = startDoj.getFullYear();
@@ -88,7 +88,8 @@ export class DashboardComponent implements OnInit {
   filterByid(id: String) {
     this.tempEmployeeArrayForFiltering = this.tempEmployeeArrayForFiltering.filter(
       (val: any) => {
-        if (val.id.valueOf() === id.toString()) {
+        //console.log(val);
+        if (val.emp_id.toString() === id.toString()) {
           return val;
         }
       }

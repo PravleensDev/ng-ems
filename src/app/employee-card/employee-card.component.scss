@@ -9,6 +9,19 @@ mat-card{
   color:white;
 }*/
 
+.card-hovered{
+  background-color: white !important;
+  color:#6c757d;
+  transition: 0.7s;
+}
+.card-hovered:hover{
+  background-color: lighten(#424242, 33%) !important;
+  color:white !important;
+  transition: 0.7s;
+}
+
+
+
 .link-hover,
 .link-hover:hover {
   text-decoration: none;

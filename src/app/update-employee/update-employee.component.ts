@@ -13,13 +13,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./update-employee.component.scss'],
 })
 export class UpdateEmployeeComponent implements OnInit {
-  userIdAdmin = !true;
+  userIdAdmin = true;
 
   visible = true;
 
   selectable = true;
 
-  removable = false;
+  removable = true;
 
   separatorKeysCodes: number[] = [ENTER, COMMA];
 
@@ -34,9 +34,11 @@ export class UpdateEmployeeComponent implements OnInit {
 
   skillsList: string[] = [];
 
+  dataId: string = '';
+
   designationDefault = '';
 
-  employeeNameHeading = "";
+  employeeNameHeading = '';
 
   updateForm = this._updateFromBuilder.group({
     empName: ['', null],
@@ -50,19 +52,12 @@ export class UpdateEmployeeComponent implements OnInit {
     empAge: ['', null],
   });
 
-  chipColors = ['warn', 'primary', 'accent', ''];
-
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _employeeDataService: EmployeeDataService,
     private _updateFromBuilder: FormBuilder
   ) {}
 
-  changeAdminState = () => {
-    this.userIdAdmin = !this.userIdAdmin;
-    this.removable = this.userIdAdmin;
-    this.ngOnInit();
-  };
   ngOnInit(): void {
     console.log('init called');
     this._activatedRoute.queryParamMap.subscribe(({ params }: any) => {
@@ -72,29 +67,33 @@ export class UpdateEmployeeComponent implements OnInit {
           .subscribe((employeeData: any) => {
             const {
               id,
+              emp_id,
               employee_name,
               employee_salary,
+              employee_email,
+              employee_password,
               employee_age,
               skills,
               designation,
               DOJ,
             } = employeeData;
-
-            this.employeeNameHeading = employee_name
+            this.dataId = id;
+            this.employeeNameHeading = employee_name;
             this.updateForm.patchValue({
               empName: employee_name,
-              empId: id,
+              empId: emp_id,
               doj: this.userIdAdmin
                 ? new Date(DOJ)
                 : new Date(DOJ).toDateString(),
               skillsSelected: null,
               salary: employee_salary,
-              empEmail: 'Email.Remaning',
-              empPassword: 'Password Remaining',
+              empEmail: employee_email,
+              empPassword: employee_password,
               empAge: employee_age,
             });
 
-            this.designationDefault = designation.trim().charAt(0).toUpperCase() + designation.slice(2);
+            this.designationDefault = designation.trim();
+
             this.skillsList = skills;
           });
       }
@@ -109,12 +108,6 @@ export class UpdateEmployeeComponent implements OnInit {
     });
   };
 
-  getChipColor() {
-    const index = Math.round(Math.random() * this.chipColors.length);
-    //console.log(this.chipColors[index])
-    return this.chipColors[index];
-  }
-
   addSkill = (event: any) => {
     if (
       event.value &&
@@ -127,7 +120,7 @@ export class UpdateEmployeeComponent implements OnInit {
     });
   };
 
-  compareDesignation(o1: any, o2: any) {
+  compareDesignation(o1: string, o2: string) {
     // console.log(o1);
     // console.log(o2);
     if (o1 && o2) {
@@ -135,4 +128,67 @@ export class UpdateEmployeeComponent implements OnInit {
     }
     return false;
   }
+
+  updateEmployeeData = () => {
+    console.log('Update form submitted');
+
+    const {
+      empName,
+      empId,
+      doj,
+      designationSelected,
+      salary,
+      empEmail,
+      empPassword,
+      empAge,
+    } = this.updateForm.value;
+
+    //console.log(this.skillsList);
+
+    /*console.log(
+      empName,
+      empId,
+      doj,
+      designationSelected,
+      salary,
+      empEmail,
+      empPassword,
+      empAge
+    );*/
+
+    this._employeeDataService
+      .updateEmployeeProfile(
+        new employeeDetails(
+          this.dataId,
+          empId,
+          empName,
+          salary,
+          empAge,
+          this.skillsList,
+          designationSelected,
+          doj,
+          empEmail,
+          empPassword
+        )
+      )
+      .subscribe((response: any) => {
+        alert('Data updated');
+        this.ngOnInit();
+      });
+  };
+}
+
+class employeeDetails {
+  constructor(
+    private id: string,
+    private emp_id: string,
+    private employee_name: string,
+    private employee_salary: string,
+    private employee_age: string,
+    private skills: string[],
+    private designation: string,
+    private DOJ: string,
+    private employee_email: string,
+    private employee_password: string
+  ) {}
 }

@@ -12,8 +12,12 @@ def getSkills(noOfSkills):
             temp.append(skill)
     return temp
 
+
+def getEmail(empName):
+    return empName.replace(" ",".") + "@gmail.com"
+
 def getDesignation():
-    pos = [" manager", " developer"," tester"," hr"," engineer"," admin"]
+    pos = [" Manager", " Developer"," Tester"," Hr"," Engineer"," Admin"]
     return pos[getRandomIndex(end = len(pos))]
 
 
@@ -42,11 +46,16 @@ with data_file as f:
 
 
 newData = []
+count = 23
 for i in data["data"]:
     index = getRandomIndex()
     i["skills"] = getSkills(index)
     i["designation"] = getDesignation()
     i["DOJ"] = getDoj()
+    i["employee_email"] = getEmail(i["employee_name"])
+    i["employee_password"] = "12345"
+    i["emp_id"] = count
+    count += 1
     newData.append(i);
 
 with open("db1.json","w") as f:

@@ -14,7 +14,12 @@ export class EmployeeDataService {
   };
 
   getEmployeeProfile = (employeeId: number) => {
-    console.log('Get request for employee profile with id ' + employeeId);
+    // console.log('Get request for employee profile with id ' + employeeId);
     return this._http.get(this.baseUrl + '/' + employeeId);
+  };
+
+  updateEmployeeProfile = (updatedData: any) => {
+    //console.log(updatedData);
+    return this._http.put(this.baseUrl + '/' + updatedData.id, updatedData);
   };
 }
