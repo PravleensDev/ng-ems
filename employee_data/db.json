@@ -2,7 +2,7 @@
   "data": [
     {
       "id": "1",
-      "emp_id": 23,
+      "emp_id": 25,
       "employee_name": "Tiger Nixon",
       "employee_salary": "320800",
       "employee_age": 25,
@@ -10,7 +10,11 @@
         " angular",
         " full stack",
         " mongodb",
-        " fultter"
+        " fultter",
+        " java",
+        " react",
+        " sql",
+        " docker"
       ],
       "designation": "Engineer",
       "DOJ": "2018-09-30T18:30:00.000Z",
@@ -36,6 +40,7 @@
     },
     {
       "id": "3",
+      "emp_id": 25,
       "employee_name": "Ashton Cox",
       "employee_salary": "86000",
       "employee_age": "66",
@@ -45,26 +50,27 @@
         " react",
         " docker"
       ],
-      "designation": " Traniee",
-      "DOJ": "13-February-2011",
+      "designation": "Traniee",
+      "DOJ": "2011-02-12T18:30:00.000Z",
       "employee_email": "Ashton.Cox@gmail.com",
-      "employee_password": "12345",
-      "emp_id": 25
+      "employee_password": "12345"
     },
     {
       "id": "4",
+      "emp_id": 26,
       "employee_name": "Cedric Kelly",
       "employee_salary": "433060",
       "employee_age": "22",
-      "profile_image": "",
       "skills": [
-        " java"
+        " java",
+        " python",
+        " sql",
+        " docker"
       ],
-      "designation": " Senior Dev",
-      "DOJ": "6-June-2013",
+      "designation": "Senior Dev",
+      "DOJ": "2013-06-05T18:30:00.000Z",
       "employee_email": "Cedric.Kelly@gmail.com",
-      "employee_password": "12345",
-      "emp_id": 26
+      "employee_password": "12345"
     },
     {
       "id": "5",
@@ -85,21 +91,21 @@
     },
     {
       "id": "6",
+      "emp_id": 28,
       "employee_name": "Brielle Williamson",
       "employee_salary": "372000",
       "employee_age": "61",
-      "profile_image": "",
       "skills": [
         " testing",
         " angular",
         " fultter",
-        " sql"
+        " sql",
+        " java"
       ],
-      "designation": " System Admin",
-      "DOJ": "12-June-2014",
+      "designation": "System Admin",
+      "DOJ": "2014-06-11T18:30:00.000Z",
       "employee_email": "Brielle.Williamson@gmail.com",
-      "employee_password": "12345",
-      "emp_id": 28
+      "employee_password": "12345"
     },
     {
       "id": "7",
@@ -432,6 +438,36 @@
       "employee_email": "Doris.Wilder@gmail.com",
       "employee_password": "12345",
       "emp_id": 46
+    },
+    {
+      "id": "kEzge6C",
+      "emp_id": 876,
+      "employee_name": "test",
+      "employee_salary": 200000,
+      "employee_age": 22,
+      "skills": [
+        " java",
+        " python",
+        " react",
+        " angular",
+        " kubernetes"
+      ],
+      "designation": "Senior Dev",
+      "DOJ": "2020-11-09T18:30:00.000Z",
+      "employee_email": "test@gmil.com",
+      "employee_password": "12345"
+    },
+    {
+      "id": "omIDtGh",
+      "emp_id": 765,
+      "employee_name": "iuytr",
+      "employee_salary": 98765432,
+      "employee_age": 44,
+      "skills": [],
+      "designation": " Traniee",
+      "DOJ": "2010-03-11T18:30:00.000Z",
+      "employee_email": "test.test@gmail.com",
+      "employee_password": "12345"
     }
   ],
   "skills": [

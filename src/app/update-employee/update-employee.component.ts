@@ -45,6 +45,8 @@ export class UpdateEmployeeComponent implements OnInit {
 
   employeeNameHeading = '';
 
+  visitedForUpdatingEmployeeDetails: boolean = true;
+
   updateForm = this._updateFromBuilder.group({
     empId: ['', [Validators.required, Validators.min(0)]],
     empName: ['', [Validators.required, Validators.pattern('[a-zA-z ]*')]],
@@ -53,7 +55,7 @@ export class UpdateEmployeeComponent implements OnInit {
     empPassword: ['', [Validators.required, Validators.minLength(4)]],
     doj: ['', [Validators.required]],
     designationSelected: ['', Validators.required],
-    salary: [10_000, [Validators.required, Validators.min(0)]],
+    salary: ['', [Validators.required, Validators.min(0)]],
     skillsSelected: ['', null],
   });
 
@@ -104,7 +106,12 @@ export class UpdateEmployeeComponent implements OnInit {
 
             this.skillsList = skills;
             this.dataLoaded = true;
+            this.visitedForUpdatingEmployeeDetails = true;
           });
+      } else if (params['type']) {
+        console.log('Visit to add new');
+        this.employeeNameHeading = 'New Employee';
+        this.visitedForUpdatingEmployeeDetails = false;
       }
     });
     this._employeeDataService
@@ -127,7 +134,7 @@ export class UpdateEmployeeComponent implements OnInit {
       event.value &&
       !this.skillsList.includes(event.value.trim().toLowerCase())
     ) {
-      this.skillsList.push(event.value);
+      this.skillsList.push(' ' + event.value);
     }
     this.updateForm.patchValue({
       skillsSelected: null,
@@ -141,10 +148,12 @@ export class UpdateEmployeeComponent implements OnInit {
     return false;
   }
 
-  updateEmployeeData = () => {
+  addEmployee = () => {
+    console.log('addeing new employee called');
     if (this.updateForm.status === 'VALID') {
+      console.log("adding form valid");
       this._employeeDataService
-        .updateEmployeeProfile(
+        .addNewEmployeeProfile(
           new employeeDetails(
             this.dataId,
             this.updateForm.value.empId,
@@ -159,11 +168,45 @@ export class UpdateEmployeeComponent implements OnInit {
           )
         )
         .subscribe((response: any) => {
-          this.showNotification('Employee data updated', 'Ok');
-          this.ngOnInit();
+          console.log("Added new employee");
+          console.log(response);
+          this.showNotification('New Employee added', 'Ok');
+          // this.ngOnInit();
         });
     } else {
-      alert('Unable update data');
+      alert('Unable add new empoyee');
+    }
+  };
+
+  updateEmployeeData = () => {
+    console.log(this.visitedForUpdatingEmployeeDetails);
+    if (this.visitedForUpdatingEmployeeDetails) {
+      if (this.updateForm.status === 'VALID') {
+        this._employeeDataService
+          .updateEmployeeProfile(
+            new employeeDetails(
+              this.dataId,
+              this.updateForm.value.empId,
+              this.updateForm.value.empName,
+              this.updateForm.value.salary,
+              this.updateForm.value.empAge,
+              this.skillsList,
+              this.updateForm.value.designationSelected,
+              this.updateForm.value.doj,
+              this.updateForm.value.empEmail,
+              this.updateForm.value.empPassword
+            )
+          )
+          .subscribe((response: any) => {
+            this.showNotification('Employee data updated', 'Ok');
+            this.ngOnInit();
+          });
+      } else {
+        alert('Unable update data');
+      }
+    } else {
+      console.log("Rerirected to add employee");
+      this.addEmployee();
     }
   };
 

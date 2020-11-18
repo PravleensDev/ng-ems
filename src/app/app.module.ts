@@ -23,7 +23,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [

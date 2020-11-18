@@ -18,6 +18,10 @@ export class EmployeeDataService {
     return this._http.get(this.baseUrl + '/' + employeeId);
   };
 
+  addNewEmployeeProfile = (newEmployeeData: any) => {
+    return this._http.post(this.baseUrl, newEmployeeData);
+  };
+
   updateEmployeeProfile = (updatedData: any) => {
     //console.log(updatedData);
     return this._http.put(this.baseUrl + '/' + updatedData.id, updatedData);

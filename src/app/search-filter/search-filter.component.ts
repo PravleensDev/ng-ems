@@ -1,7 +1,7 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { EmployeeDataService } from '../services/employee-data.service';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search-filter',
@@ -52,7 +52,8 @@ export class SearchFilterComponent implements OnInit {
 
   constructor(
     private _filterFormBuilder: FormBuilder,
-    private _employeeDataService: EmployeeDataService
+    private _employeeDataService: EmployeeDataService,
+    private _navigationRouter: Router
   ) {}
 
   salaryLabel = (value: number) => {
@@ -67,13 +68,19 @@ export class SearchFilterComponent implements OnInit {
     this._employeeDataService.getSkills().subscribe((skillsData: any) => {
       this.skillsList = skillsData;
     });
-    this._employeeDataService.getDesignations().subscribe((designationsData: any) =>{
-      this.designationList = designationsData;
-    })
+    this._employeeDataService
+      .getDesignations()
+      .subscribe((designationsData: any) => {
+        this.designationList = designationsData;
+      });
   }
 
   pushSelectedFiltersToDashboard = () => {
     //console.log(this.filterFormData)
     this.appliedFilterData.emit(this.filterFormData.value);
+  };
+
+  routeToAddingNewEmployee = () => {
+    this._navigationRouter.navigateByUrl('add-employee?type=new');
   };
 }

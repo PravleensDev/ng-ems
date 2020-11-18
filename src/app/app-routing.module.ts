@@ -17,6 +17,10 @@ const routes: Routes = [
     path: 'update-employee',
     component: UpdateEmployeeComponent,
   },
+  {
+    path: 'add-employee',
+    component: UpdateEmployeeComponent,
+  },
 ];
 
 @NgModule({
