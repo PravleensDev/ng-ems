@@ -1,10 +1,22 @@
 import json
 from random import random, randrange
+
+skills = [" ML", " java", " python"," full stack"," sql"," mongodb", " react"," angular", " fultter"," devops"," docker"," testing"]
+pos = [
+    " Senior Engg",
+    " Senior Dev",
+    " Developer",
+    " Traniee",
+    " Engineer",
+    " System Admin"
+  ]
+
+
 def getRandomIndex(start = 1,end = 10):
     return int(randrange(start, end))
 
 def getSkills(noOfSkills):
-    skills = [" ML", "java", " python"," full stack"," sql"," mongodb", " react"," angular", " fultter"," devops"," docker"," testing"]
+    
     temp = []
     for i in range(0, noOfSkills):
         skill = skills[getRandomIndex(end = len(skills))]
@@ -17,7 +29,7 @@ def getEmail(empName):
     return empName.replace(" ",".") + "@gmail.com"
 
 def getDesignation():
-    pos = [" Manager", " Developer"," Tester"," Hr"," Engineer"," Admin"]
+   
     return pos[getRandomIndex(end = len(pos))]
 
 
@@ -58,10 +70,10 @@ for i in data["data"]:
     count += 1
     newData.append(i);
 
-with open("db1.json","w") as f:
-    json.dump({"data":newData},f)
+with open("db.json","w") as f:
+    json.dump({"data":newData, "skills": skills, "designations":pos},f)
 
-print({"data":newData})
+print({"data":newData, "skills": skills, "designations":pos})
 
 
     

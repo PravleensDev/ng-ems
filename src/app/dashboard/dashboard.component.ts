@@ -58,7 +58,7 @@ export class DashboardComponent implements OnInit {
     skillsSelected.forEach((skills: string) => {
       tempArray = tempArray.concat(
         this.tempEmployeeArrayForFiltering.filter((data: any) => {
-          if (data.skills.includes(' ' + skills)) {
+          if (data.skills.includes(skills)) {
             return data;
           }
         })

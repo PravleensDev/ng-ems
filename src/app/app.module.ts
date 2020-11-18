@@ -23,6 +23,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SearchFilterComponent } from './search-filter/search-filter.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { UpdateEmployeeComponent } from './update-employee/update-employee.compo
     MatSelectModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

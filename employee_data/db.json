@@ -7,32 +7,30 @@
       "employee_salary": "320800",
       "employee_age": 25,
       "skills": [
-        " testing",
-        " mongodb",
-        " fultter",
+        " angular",
         " full stack",
-        " angular"
+        " mongodb",
+        " fultter"
       ],
-      "designation": "Hr",
-      "DOJ": "2014-09-05T18:30:00.000Z",
+      "designation": "Engineer",
+      "DOJ": "2018-09-30T18:30:00.000Z",
       "employee_email": "Tiger.Nixon@gmail.com",
       "employee_password": "12345"
     },
     {
       "id": "2",
       "emp_id": 24,
-      "employee_name": "Garrett Winters",
+      "employee_name": "Garrett Winters ",
       "employee_salary": "170750",
-      "employee_age": "63",
+      "employee_age": 25,
       "skills": [
-        " testing",
+        " react",
+        " mongodb",
         " full stack",
-        " python",
-        " fultter",
-        " angular"
+        " docker"
       ],
-      "designation": "Tester",
-      "DOJ": "2019-07-05T18:30:00.000Z",
+      "designation": "Engineer",
+      "DOJ": "2016-10-14T18:30:00.000Z",
       "employee_email": "Garrett.Winters@gmail.com",
       "employee_password": "12345"
     },
@@ -42,16 +40,13 @@
       "employee_salary": "86000",
       "employee_age": "66",
       "skills": [
-        " docker",
-        " python",
+        " angular",
+        " testing",
         " react",
-        " mongodb",
-        " full stack",
-        " sql",
-        " fultter"
+        " docker"
       ],
-      "designation": " Developer",
-      "DOJ": "11-May-2018",
+      "designation": " Traniee",
+      "DOJ": "13-February-2011",
       "employee_email": "Ashton.Cox@gmail.com",
       "employee_password": "12345",
       "emp_id": 25
@@ -63,15 +58,10 @@
       "employee_age": "22",
       "profile_image": "",
       "skills": [
-        "java",
-        " testing",
-        " mongodb",
-        " fultter",
-        " sql",
-        " full stack"
+        " java"
       ],
-      "designation": " Hr",
-      "DOJ": "19-November-2018",
+      "designation": " Senior Dev",
+      "DOJ": "6-June-2013",
       "employee_email": "Cedric.Kelly@gmail.com",
       "employee_password": "12345",
       "emp_id": 26
@@ -83,12 +73,12 @@
       "employee_age": "33",
       "profile_image": "",
       "skills": [
-        " sql",
-        "java",
-        " angular"
+        " angular",
+        " docker",
+        " devops"
       ],
-      "designation": " Hr",
-      "DOJ": "18-June-2012",
+      "designation": " Developer",
+      "DOJ": "4-August-2010",
       "employee_email": "Airi.Satou@gmail.com",
       "employee_password": "12345",
       "emp_id": 27
@@ -100,15 +90,13 @@
       "employee_age": "61",
       "profile_image": "",
       "skills": [
-        " sql",
-        "java",
         " testing",
-        " docker",
+        " angular",
         " fultter",
-        " angular"
+        " sql"
       ],
-      "designation": " Hr",
-      "DOJ": "24-April-2011",
+      "designation": " System Admin",
+      "DOJ": "12-June-2014",
       "employee_email": "Brielle.Williamson@gmail.com",
       "employee_password": "12345",
       "emp_id": 28
@@ -120,10 +108,16 @@
       "employee_age": "59",
       "profile_image": "",
       "skills": [
-        " full stack"
+        " testing",
+        " mongodb",
+        " devops",
+        " sql",
+        " docker",
+        " full stack",
+        " angular"
       ],
-      "designation": " Hr",
-      "DOJ": "19-November-2014",
+      "designation": " Engineer",
+      "DOJ": "8-September-2013",
       "employee_email": "Herrod.Chandler@gmail.com",
       "employee_password": "12345",
       "emp_id": 29
@@ -134,13 +128,13 @@
       "employee_salary": 327900,
       "employee_age": "55",
       "skills": [
-        " docker",
-        " full stack",
+        " mongodb",
+        " testing",
         " react",
-        " sql"
+        " full stack"
       ],
-      "designation": " Engineer",
-      "DOJ": "17-April-2016",
+      "designation": " Traniee",
+      "DOJ": "9-June-2013",
       "employee_email": "Rhona.Davidson@gmail.com",
       "employee_password": "12345",
       "emp_id": 30
@@ -152,10 +146,14 @@
       "employee_age": "39",
       "profile_image": "",
       "skills": [
+        " angular",
+        " react",
+        " python",
+        " devops",
         " fultter"
       ],
-      "designation": " Engineer",
-      "DOJ": "18-April-2011",
+      "designation": " System Admin",
+      "DOJ": "8-August-2012",
       "employee_email": "Colleen.Hurst@gmail.com",
       "employee_password": "12345",
       "emp_id": 31
@@ -167,14 +165,13 @@
       "employee_age": 25,
       "skills": [
         " mongodb",
-        " angular",
-        " devops",
-        " testing",
-        " python",
-        " react"
+        " docker",
+        " sql",
+        " java",
+        " devops"
       ],
-      "designation": " Developer",
-      "DOJ": "23-October-2017",
+      "designation": " Traniee",
+      "DOJ": "11-February-2019",
       "employee_email": "Tiger.Nixon@gmail.com",
       "employee_password": "12345",
       "emp_id": 32
@@ -187,10 +184,13 @@
       "profile_image": "",
       "skills": [
         " devops",
-        " testing"
+        " mongodb",
+        " docker",
+        " python",
+        " angular"
       ],
       "designation": " Developer",
-      "DOJ": "21-June-2012",
+      "DOJ": "14-November-2010",
       "employee_email": "Jena.Gaines@gmail.com",
       "employee_password": "12345",
       "emp_id": 33
@@ -202,11 +202,15 @@
       "employee_age": "22",
       "profile_image": "",
       "skills": [
+        " full stack",
+        " devops",
+        " fultter",
         " python",
-        "java"
+        " react",
+        " sql"
       ],
-      "designation": " Tester",
-      "DOJ": "11-July-2013",
+      "designation": " System Admin",
+      "DOJ": "1-August-2019",
       "employee_email": "Quinn.Flynn@gmail.com",
       "employee_password": "12345",
       "emp_id": 34
@@ -218,14 +222,13 @@
       "employee_age": "36",
       "profile_image": "",
       "skills": [
-        "java",
-        " fultter",
-        " sql",
-        " testing",
-        " devops"
+        " python",
+        " full stack",
+        " devops",
+        " react"
       ],
-      "designation": " Admin",
-      "DOJ": "16-August-2019",
+      "designation": " Senior Dev",
+      "DOJ": "6-February-2012",
       "employee_email": "Charde.Marshall@gmail.com",
       "employee_password": "12345",
       "emp_id": 35
@@ -237,33 +240,35 @@
       "employee_age": "43",
       "profile_image": "",
       "skills": [
+        " devops",
         " angular",
         " testing",
-        " react",
-        " mongodb"
+        " full stack"
       ],
       "designation": " Developer",
-      "DOJ": "14-June-2011",
+      "DOJ": "8-November-2011",
       "employee_email": "Haley.Kennedy@gmail.com",
       "employee_password": "12345",
       "emp_id": 36
     },
     {
       "id": "15",
+      "emp_id": 90,
       "employee_name": "Tatyana Fitzpatrick",
       "employee_salary": "385750",
       "employee_age": "19",
-      "profile_image": "",
       "skills": [
-        " angular",
+        " mongodb",
+        " testing",
+        " full stack",
+        " sql",
         " docker",
-        " full stack"
+        " python"
       ],
-      "designation": " Tester",
-      "DOJ": "8-November-2016",
+      "designation": "Senior Engg",
+      "DOJ": "2012-04-30T18:30:00.000Z",
       "employee_email": "Tatyana.Fitzpatrick@gmail.com",
-      "employee_password": "12345",
-      "emp_id": 37
+      "employee_password": "12345"
     },
     {
       "id": "16",
@@ -272,10 +277,13 @@
       "employee_age": "66",
       "profile_image": "",
       "skills": [
-        " react"
+        " testing",
+        " docker",
+        " devops",
+        " full stack"
       ],
-      "designation": " Hr",
-      "DOJ": "3-July-2015",
+      "designation": " Engineer",
+      "DOJ": "5-May-2012",
       "employee_email": "Michael.Silva@gmail.com",
       "employee_password": "12345",
       "emp_id": 38
@@ -287,11 +295,14 @@
       "employee_salary": "725000",
       "employee_age": "64",
       "skills": [
+        " full stack",
+        " sql",
+        " fultter",
         " react",
-        " sql"
+        " mongodb"
       ],
-      "designation": "engineer",
-      "DOJ": "2011-03-07T18:30:00.000Z",
+      "designation": " Traniee",
+      "DOJ": "21-August-2019",
       "employee_email": "Paul.Byrd@gmail.com",
       "employee_password": "12345"
     },
@@ -302,12 +313,15 @@
       "employee_age": "59",
       "profile_image": "",
       "skills": [
-        " docker",
-        " fultter",
-        " testing"
+        " devops",
+        " react",
+        " testing",
+        " sql",
+        " angular",
+        " mongodb"
       ],
-      "designation": " Tester",
-      "DOJ": "16-February-2010",
+      "designation": " Engineer",
+      "DOJ": "5-August-2018",
       "employee_email": "Gloria.Little@gmail.com",
       "employee_password": "12345",
       "emp_id": 40
@@ -319,12 +333,12 @@
       "employee_age": "41",
       "profile_image": "",
       "skills": [
-        " python",
-        " docker",
-        " fultter"
+        " java",
+        " fultter",
+        " devops"
       ],
       "designation": " Engineer",
-      "DOJ": "6-May-2016",
+      "DOJ": "10-August-2012",
       "employee_email": "Bradley.Greer@gmail.com",
       "employee_password": "12345",
       "emp_id": 41
@@ -336,13 +350,11 @@
       "employee_age": "35",
       "profile_image": "",
       "skills": [
-        " devops",
-        " testing",
-        " react",
-        " docker"
+        " java",
+        " react"
       ],
-      "designation": " Hr",
-      "DOJ": "14-September-2016",
+      "designation": " Senior Dev",
+      "DOJ": "14-September-2017",
       "employee_email": "Dai.Rios@gmail.com",
       "employee_password": "12345",
       "emp_id": 42
@@ -354,15 +366,15 @@
       "employee_age": "30",
       "profile_image": "",
       "skills": [
+        " sql",
+        " mongodb",
+        " fultter",
+        " react",
         " testing",
-        " docker",
-        "java",
-        " angular",
-        " python",
-        " sql"
+        " docker"
       ],
-      "designation": " Hr",
-      "DOJ": "17-March-2017",
+      "designation": " Developer",
+      "DOJ": "2-February-2016",
       "employee_email": "Jenette.Caldwell@gmail.com",
       "employee_password": "12345",
       "emp_id": 43
@@ -374,16 +386,11 @@
       "employee_age": "40",
       "profile_image": "",
       "skills": [
-        "java",
-        " docker",
-        " react",
-        " full stack",
-        " devops",
-        " python",
-        " sql"
+        " sql",
+        " testing"
       ],
-      "designation": " Admin",
-      "DOJ": "19-August-2014",
+      "designation": " System Admin",
+      "DOJ": "14-August-2011",
       "employee_email": "Yuri.Berry@gmail.com",
       "employee_password": "12345",
       "emp_id": 44
@@ -395,17 +402,12 @@
       "employee_age": "21",
       "profile_image": "",
       "skills": [
-        " sql",
-        " python",
-        " angular",
-        " react",
+        " java",
         " docker",
-        " testing",
-        "java",
-        " fultter"
+        " react"
       ],
-      "designation": " Hr",
-      "DOJ": "14-October-2018",
+      "designation": " Traniee",
+      "DOJ": "15-February-2010",
       "employee_email": "Caesar.Vance@gmail.com",
       "employee_password": "12345",
       "emp_id": 45
@@ -417,14 +419,41 @@
       "employee_age": "23",
       "profile_image": "",
       "skills": [
-        " react",
-        " angular"
+        " devops",
+        " mongodb",
+        " docker",
+        " full stack",
+        " sql",
+        " angular",
+        " fultter"
       ],
       "designation": " Developer",
-      "DOJ": "22-November-2013",
+      "DOJ": "3-April-2016",
       "employee_email": "Doris.Wilder@gmail.com",
       "employee_password": "12345",
       "emp_id": 46
     }
+  ],
+  "skills": [
+    " ML",
+    " java",
+    " python",
+    " full stack",
+    " sql",
+    " mongodb",
+    " react",
+    " angular",
+    " fultter",
+    " devops",
+    " docker",
+    " testing"
+  ],
+  "designations": [
+    " Senior Engg",
+    " Senior Dev",
+    " Developer",
+    " Traniee",
+    " Engineer",
+    " System Admin"
   ]
 }

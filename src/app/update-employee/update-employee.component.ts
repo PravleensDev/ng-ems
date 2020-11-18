@@ -3,6 +3,9 @@ import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { Component, OnInit } from '@angular/core';
 import { EmployeeDataService } from '../services/employee-data.service';
 import { FormBuilder, Validators } from '@angular/forms';
+
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 import { map, startWith } from 'rxjs/operators';
 import { MatChipInputEvent } from '@angular/material/chips';
 import { Observable } from 'rxjs';
@@ -13,6 +16,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./update-employee.component.scss'],
 })
 export class UpdateEmployeeComponent implements OnInit {
+  dataLoaded = false;
+
   userIdAdmin = true;
 
   visible = true;
@@ -41,21 +46,23 @@ export class UpdateEmployeeComponent implements OnInit {
   employeeNameHeading = '';
 
   updateForm = this._updateFromBuilder.group({
-    empName: ['', null],
-    empId: ['', [Validators.min(0)]],
-    doj: ['', null],
-    designationSelected: ['', null],
+    empId: ['', [Validators.required, Validators.min(0)]],
+    empName: ['', [Validators.required, Validators.pattern('[a-zA-z ]*')]],
+    empAge: ['', [Validators.required, Validators.min(1)]],
+    empEmail: ['', [Validators.required, Validators.email]],
+    empPassword: ['', [Validators.required, Validators.minLength(4)]],
+    doj: ['', [Validators.required]],
+    designationSelected: ['', Validators.required],
+    salary: [10_000, [Validators.required, Validators.min(0)]],
     skillsSelected: ['', null],
-    salary: [10_000, null],
-    empEmail: ['', null],
-    empPassword: ['', null],
-    empAge: ['', null],
   });
 
   constructor(
     private _activatedRoute: ActivatedRoute,
     private _employeeDataService: EmployeeDataService,
-    private _updateFromBuilder: FormBuilder
+    private _updateFromBuilder: FormBuilder,
+    private _navigatorRoute: Router,
+    private _notificationBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -90,14 +97,21 @@ export class UpdateEmployeeComponent implements OnInit {
               empEmail: employee_email,
               empPassword: employee_password,
               empAge: employee_age,
+              designationSelected: designation,
             });
 
             this.designationDefault = designation.trim();
 
             this.skillsList = skills;
+            this.dataLoaded = true;
           });
       }
     });
+    this._employeeDataService
+      .getDesignations()
+      .subscribe((designationData: any) => {
+        this.designationList = designationData;
+      });
   }
 
   removeSkill = (skillToRemove: any) => {
@@ -121,8 +135,6 @@ export class UpdateEmployeeComponent implements OnInit {
   };
 
   compareDesignation(o1: string, o2: string) {
-    // console.log(o1);
-    // console.log(o2);
     if (o1 && o2) {
       return o1.trim().toLowerCase() === o2.trim().toLowerCase();
     }
@@ -130,51 +142,49 @@ export class UpdateEmployeeComponent implements OnInit {
   }
 
   updateEmployeeData = () => {
-    console.log('Update form submitted');
-
-    const {
-      empName,
-      empId,
-      doj,
-      designationSelected,
-      salary,
-      empEmail,
-      empPassword,
-      empAge,
-    } = this.updateForm.value;
-
-    //console.log(this.skillsList);
-
-    /*console.log(
-      empName,
-      empId,
-      doj,
-      designationSelected,
-      salary,
-      empEmail,
-      empPassword,
-      empAge
-    );*/
-
-    this._employeeDataService
-      .updateEmployeeProfile(
-        new employeeDetails(
-          this.dataId,
-          empId,
-          empName,
-          salary,
-          empAge,
-          this.skillsList,
-          designationSelected,
-          doj,
-          empEmail,
-          empPassword
+    if (this.updateForm.status === 'VALID') {
+      this._employeeDataService
+        .updateEmployeeProfile(
+          new employeeDetails(
+            this.dataId,
+            this.updateForm.value.empId,
+            this.updateForm.value.empName,
+            this.updateForm.value.salary,
+            this.updateForm.value.empAge,
+            this.skillsList,
+            this.updateForm.value.designationSelected,
+            this.updateForm.value.doj,
+            this.updateForm.value.empEmail,
+            this.updateForm.value.empPassword
+          )
         )
-      )
-      .subscribe((response: any) => {
-        alert('Data updated');
-        this.ngOnInit();
-      });
+        .subscribe((response: any) => {
+          this.showNotification('Employee data updated', 'Ok');
+          this.ngOnInit();
+        });
+    } else {
+      alert('Unable update data');
+    }
+  };
+
+  deteleEmployee = () => {
+    console.log('Deleting employee with id', this.dataId);
+
+    if (confirm('Are you sure want to delete this details ?')) {
+      this._employeeDataService
+        .deleteEmployeeProfile(this.dataId)
+        .subscribe((response: any) => {
+          console.log(response);
+          this.showNotification('Employee data deleted', 'Ok');
+          this._navigatorRoute.navigateByUrl('/dashboard');
+        });
+    }
+  };
+
+  showNotification = (message: string, action: string) => {
+    this._notificationBar.open(message, action, {
+      duration: 5000,
+    });
   };
 }
 

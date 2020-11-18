@@ -22,4 +22,16 @@ export class EmployeeDataService {
     //console.log(updatedData);
     return this._http.put(this.baseUrl + '/' + updatedData.id, updatedData);
   };
+
+  deleteEmployeeProfile = (dataId: any) => {
+    return this._http.delete(this.baseUrl + '/' + dataId);
+  };
+
+  getSkills = () => {
+    return this._http.get(this.baseUrl.replace('data', 'skills'));
+  };
+
+  getDesignations = () => {
+    return this._http.get(this.baseUrl.replace('data', 'designations'));
+  };
 }

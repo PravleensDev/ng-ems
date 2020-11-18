@@ -1,6 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
-import { FormBuilder,  Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
+import { EmployeeDataService } from '../services/employee-data.service';
 
 @Component({
   selector: 'app-search-filter',
@@ -49,7 +50,10 @@ export class SearchFilterComponent implements OnInit {
     salary: [10_000, null],
   });
 
-  constructor(private _filterFormBuilder: FormBuilder) {}
+  constructor(
+    private _filterFormBuilder: FormBuilder,
+    private _employeeDataService: EmployeeDataService
+  ) {}
 
   salaryLabel = (value: number) => {
     if (value >= 1000) {
@@ -58,12 +62,18 @@ export class SearchFilterComponent implements OnInit {
     }
     return value;
   };
-  
-  ngOnInit(): void {}
-  
+
+  ngOnInit(): void {
+    this._employeeDataService.getSkills().subscribe((skillsData: any) => {
+      this.skillsList = skillsData;
+    });
+    this._employeeDataService.getDesignations().subscribe((designationsData: any) =>{
+      this.designationList = designationsData;
+    })
+  }
+
   pushSelectedFiltersToDashboard = () => {
     //console.log(this.filterFormData)
     this.appliedFilterData.emit(this.filterFormData.value);
-    
   };
 }

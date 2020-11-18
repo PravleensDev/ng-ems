@@ -2,8 +2,8 @@
 
 <div class="jumbotron p-4 bg-transparent"></div>
 
-<div class="container text-center w-75">
-  <form [formGroup]="updateForm" (submit) = "updateEmployeeData()">
+<div class="container text-center w-75" *ngIf="dataLoaded">
+  <form [formGroup]="updateForm" (submit)="updateEmployeeData()">
     <div class="row no-gutters">
       <div class="col-4">
         <img src="../../assets/avatar.png" class="avatar-img" />
@@ -41,6 +41,12 @@
             [readonly]="!userIdAdmin"
             formControlName="empName"
           />
+          <mat-error *ngIf="updateForm.controls.empName.hasError('required')"
+            >*Required</mat-error
+          >
+          <mat-error *ngIf="updateForm.controls.empName.hasError('pattern')"
+            >*Invalid name</mat-error
+          >
         </mat-form-field>
       </div>
       <div class="col-5 mx-auto">
@@ -102,6 +108,9 @@
             class="w-100"
           ></mat-datepicker-toggle>
           <mat-datepicker #dojpicker></mat-datepicker>
+          <mat-error *ngIf="updateForm.controls.doj.hasError('required')"
+            >*Required</mat-error
+          >
         </mat-form-field>
       </div>
 
@@ -116,6 +125,12 @@
             [readonly]="!userIdAdmin"
             formControlName="empAge"
           />
+          <mat-error *ngIf="updateForm.controls.empAge.hasError('required')"
+            >*Required</mat-error
+          >
+          <mat-error *ngIf="updateForm.controls.empAge.hasError('min')"
+            >*Age cannot be negative</mat-error
+          >
         </mat-form-field>
       </div>
       <div class="col-5 text-center mx-auto pt-3">
@@ -125,10 +140,15 @@
             matInput
             placeholder="Enter employee id ..."
             type="number"
-            value="1"
             [readonly]="!userIdAdmin"
             formControlName="empId"
           />
+          <mat-error *ngIf="updateForm.controls.empId.hasError('required')"
+            >*Required</mat-error
+          >
+          <mat-error *ngIf="updateForm.controls.empId.hasError('min')"
+            >*Id cannot be negative</mat-error
+          >
         </mat-form-field>
       </div>
       <div class="col-5 text-center mx-auto pt-3">
@@ -142,6 +162,12 @@
             [readonly]="!userIdAdmin"
             formControlName="salary"
           />
+          <mat-error *ngIf="updateForm.controls.salary.hasError('min')"
+            >*Salary cannot be negative</mat-error
+          >
+          <mat-error *ngIf="updateForm.controls.salary.hasError('required')"
+            >*Required</mat-error
+          >
         </mat-form-field>
       </div>
       <div class="col-5 text-center mx-auto pt-3">
@@ -151,10 +177,15 @@
             matInput
             placeholder="Enter employee email ..."
             type="email"
-            value="user@example.com"
             [readonly]="!userIdAdmin"
             formControlName="empEmail"
           />
+          <mat-error *ngIf="updateForm.controls.empEmail.hasError('required')"
+            >*Required</mat-error
+          >
+          <mat-error *ngIf="updateForm.controls.empEmail.hasError('email')"
+            >*invalid email</mat-error
+          >
         </mat-form-field>
       </div>
 
@@ -164,11 +195,18 @@
           <input
             matInput
             placeholder="Enter employee Password ..."
-            type="password"
-            value="12345678"
+            type="text"
             [readonly]="!userIdAdmin"
             formControlName="empPassword"
           />
+          <mat-error
+            *ngIf="updateForm.controls.empPassword.hasError('required')"
+            >*Required</mat-error
+          >
+          <mat-error
+            *ngIf="updateForm.controls.empPassword.hasError('minlength')"
+            >*Password must contain atleast 4 characters</mat-error
+          >
         </mat-form-field>
       </div>
     </div>
@@ -212,14 +250,28 @@
     <div
       class="jumbotron p-2 bg-transparent"
       style="position: sticky; bottom: 0px"
+      *ngIf="userIdAdmin"
     >
       <div class="row mt-5">
-        <div class="col-6 mx-auto ">
-          <button type="submit" mat-raised-button  class="w-50 bg-success text-light" ><i class="fas fa-upload"></i>  Update</button>
+        <div class="col-6 mx-auto">
+          <button
+            type="submit"
+            mat-raised-button
+            class="w-50 text-light bg-success"
+          >
+            <i class="fas fa-upload"></i> Update
+          </button>
         </div>
 
         <div class="col-6 mx-auto">
-          <button mat-raised-button class="w-50 bg-danger text-light" ><i class="fas fa-times"></i>  Delete</button>
+          <button
+            mat-raised-button
+            class="w-50 bg-danger text-light"
+            (click)="deteleEmployee()"
+            type="button"
+          >
+            <i class="fas fa-times"></i> Delete
+          </button>
         </div>
       </div>
     </div>
